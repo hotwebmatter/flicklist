@@ -18,7 +18,11 @@ Give the Watchlist items some styles:
 - a little bit of margin on the bottom and right edges
 - no padding
 */
-
+#section-watchlist li {
+    padding: 0px;
+    width: 160px;
+    margin: 0px 4% 4% 0px;
+}
 
 /*
 TODO 2j
