@@ -46,17 +46,21 @@
   <script>
     // TODO 8
     // fill in the missing pieces of the code below
+    /* global $ */
+    /* global discoverMovies */
+    /* global render */
 
-    $("TODO 8a").submit(function(evt) {
+    $("#form-search").submit(function(evt) {
 
       // first, we cancel the default action (which would leave the page)
       evt.preventDefault();
 
       // figure out what the user typed
-      var searchTerm = $("TODO 8b").val();
+      var searchTerm = $("#form-search input[name=query]").val();
 
       // TODO 8c invoke the searchMovies function,
       // passing in the search term, and render as the callback
+      discoverMovies(render);
 
     });
   </script>
