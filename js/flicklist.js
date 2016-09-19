@@ -8,7 +8,7 @@ var model = {
 
 var api = {
   root: "https://api.themoviedb.org/3",
-  token: "TODO" // TODO 0 put your api key here
+  token: "af1ed7f5cf7986d59df039e6e9bb95ea" // TODO 0 put your api key here
 }
 
 
@@ -29,6 +29,7 @@ function discoverMovies(callback) {
 			
 			// TODO 2
 			// update the model, setting its .browseItems property equal to the movies we recieved in the response
+			model.browseItems = response;
 			
 			// invoke the callback function that was passed in. 
 			callback();
