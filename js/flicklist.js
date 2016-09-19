@@ -79,6 +79,7 @@ function render() {
   // insert browse items
   model.browseItems.forEach(function(movie) {
     var title = $("<h4></h4>").text(movie.original_title);
+    var overview = $("<p></p>").text(movie.overview);
     var button = $("<button></button>")
       .text("Add to Watchlist")
       .click(function() {
@@ -101,6 +102,7 @@ function render() {
     var itemView = $("<li></li>")
       .append($("<hr/>"))
       .append(title)
+      .append(overview)
       .append(button);
 
     // append the itemView to the list
