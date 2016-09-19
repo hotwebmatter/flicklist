@@ -53,6 +53,8 @@ function render() {
   model.browseItems.forEach(function(movie) {
 		// TODO 3
 		// insert a list item into the <ul> in the browse section
+		var title = $("<li><p></p></li>").text(movie.original_title);
+		$("#section-browse ul").append(title);
 		
 		// TODO 4
 		// the list item should include a button that says "Add to Watchlist"
