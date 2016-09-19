@@ -63,6 +63,9 @@ function render() {
 		
 		// TODO 5
 		// when the button is clicked, this movie should be added to the model's watchlist and render() should be called again
+		button.click(function() {
+			console.log("Button clicked!");
+		})
   });
   
 }
