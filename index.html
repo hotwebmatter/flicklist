@@ -59,7 +59,7 @@
       TODO 2f
       Give this list a class of "list-inline"
       -->
-      <ul></ul>
+      <ul class="list-inline"></ul>
     </section>
 
     <section id="section-browse">
@@ -73,8 +73,12 @@
         "input-group", "form-control", "input-group-btn", "btn", "btn-primary"
         -->
         <form id="form-search">
-          <input type="text" name="query"/>
-          <input type="submit" value="Search By Title"/>
+          <div class="input-group">
+            <input class="form-control" type="text" name="query"/>
+            <span class="input-group-btn">
+              <input class="btn btn-primary" type="submit" value="Search By Title"/>
+            </span>
+          </div>
         </form>
 
       </header>

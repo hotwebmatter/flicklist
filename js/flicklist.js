@@ -82,10 +82,11 @@ function render() {
     // add an "I watched it" button and append it below the title
     // Clicking should remove this movie from the watchlist and re-render
     var button = $("<button></button>")
-    .text("I Watched It")
-    .click(function() {
-    	model.watchlistItems.splice(model.watchlistItems.indexOf(movie), 1);
-    	render();
+      .text("I Watched It")
+      .attr("class", "btn btn-primary")
+      .click(function() {
+    	  model.watchlistItems.splice(model.watchlistItems.indexOf(movie), 1);
+    	  render();
     })
 
     // TODO 2i
@@ -97,10 +98,18 @@ function render() {
 
     // TODO 2g
     // re-implement the li as a bootstrap panel with a heading and a body
-    var itemView = $("<li></li>")
-      .append(title)
+    var panelHeading = $("<div></div>")
+      .attr("class", "panel-heading")
+      .append(title);
+    
+    var panelBody = $("<div></div>")
+      .attr("class", "panel-body")
       .append(button)
-      .attr("class", "item-watchlist");
+    
+    var itemView = $("<li></li>")
+      .append(panelHeading)
+      .append(panelBody)
+      .attr("class", "panel panel-default");
 
     $("#section-watchlist ul").append(itemView);
   });
