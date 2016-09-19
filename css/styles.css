@@ -12,7 +12,9 @@ add a selector for elements with class "item-watchlist"
 give these elements a display property of inline-block
 and then style them as shown in the example (padding, margin, background, etc)
 */
-
+.item-watchlist {
+	display: inline-block;
+}
 
 /*
 TODO 5 
