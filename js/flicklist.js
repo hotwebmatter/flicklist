@@ -58,6 +58,8 @@ function render() {
 		
 		// TODO 4
 		// the list item should include a button that says "Add to Watchlist"
+		var button = $("<button></button>").text("Add to Watchlist");
+		$("#section-browse ul").append(button);
 		
 		// TODO 5
 		// when the button is clicked, this movie should be added to the model's watchlist and render() should be called again
