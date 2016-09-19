@@ -29,7 +29,7 @@ function discoverMovies(callback) {
 			
 			// TODO 2
 			// update the model, setting its .browseItems property equal to the movies we recieved in the response
-			model.browseItems = response;
+			model.browseItems = response.results;
 			
 			// invoke the callback function that was passed in. 
 			callback();
