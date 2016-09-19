@@ -65,6 +65,7 @@ function render() {
 		// when the button is clicked, this movie should be added to the model's watchlist and render() should be called again
 		button.click(function() {
 			console.log("Button clicked!");
+			model.watchlistItems.push(movie);
 		})
   });
   
