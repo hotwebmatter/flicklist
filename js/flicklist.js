@@ -45,6 +45,8 @@ function discoverMovies(callback) {
 function render() {
   // TODO 7
   // clear everything from both lists
+  $("#section-watchlist ul").empty();
+  $("#section-browse ul").empty();
   
   // TODO 6
   // for each movie on the user's watchlist, insert a list item into the <ul> in the watchlist section
