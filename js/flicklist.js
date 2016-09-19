@@ -112,12 +112,13 @@ function render() {
     // style this list item to look like the demo
     // You'll also need to make changes in index.html.
     // use the following BS classes:
-    // "list-group", "list-group-item", btn", "btn-primary", 
+    // "list-group", "list-group-item", "btn", "btn-primary", 
 
     var title = $("<h4></h4>").text(movie.original_title);
 
     var button = $("<button></button>")
       .text("Add to Watchlist")
+      .attr("class", "btn btn-primary")
       .click(function() {
         model.watchlistItems.push(movie);
         render();
@@ -128,6 +129,7 @@ function render() {
 
     // append everything to itemView, along with an <hr/>
     var itemView = $("<li></li>")
+      .attr("class", "list-group-item")
       .append(title)
       .append(overview)
       .append(button);
