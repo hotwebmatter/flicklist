@@ -66,6 +66,7 @@ function render() {
 		button.click(function() {
 			console.log("Button clicked!");
 			model.watchlistItems.push(movie);
+			render();
 		})
   });
   
