@@ -47,7 +47,7 @@
     // TODO 8
     // fill in the missing pieces of the code below
     /* global $ */
-    /* global discoverMovies */
+    /* global searchMovies */
     /* global render */
 
     $("#form-search").submit(function(evt) {
@@ -60,7 +60,7 @@
 
       // TODO 8c invoke the searchMovies function,
       // passing in the search term, and render as the callback
-      discoverMovies(render);
+      searchMovies(searchTerm, render);
 
     });
   </script>
