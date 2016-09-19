@@ -9,7 +9,7 @@ var model = {
 var api = {
 
   root: "https://api.themoviedb.org/3",
-  token: "af1ed7f5cf7986d59df039e6e9bb95ea", // TODO 0 add your api key
+  token: "af1ed7f5cf7986d59df039e6e9bb95ea", // TODO 0 add your api key (DONE)
 
   /**
    * Given a movie object, returns the url to its poster image
@@ -81,6 +81,12 @@ function render() {
     // TODO 1 
     // add an "I watched it" button and append it below the title
     // Clicking should remove this movie from the watchlist and re-render
+    var button = $("<button></button>")
+    .text("I Watched It")
+    .click(function() {
+    	model.watchlistItems.splice(model.watchlistItems.indexOf(movie), 1);
+    	render();
+    })
 
     // TODO 2i
     // apply the classes "btn btn-danger" to the "I watched it button"
@@ -93,6 +99,7 @@ function render() {
     // re-implement the li as a bootstrap panel with a heading and a body
     var itemView = $("<li></li>")
       .append(title)
+      .append(button)
       .attr("class", "item-watchlist");
 
     $("#section-watchlist ul").append(itemView);
