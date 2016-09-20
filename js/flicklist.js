@@ -13,7 +13,7 @@ var api = {
    * Given a movie object, returns the url to its poster image
    */
   posterUrl: function(movie) {
-    var baseImageUrl = "http://image.tmdb.org/t/p/w300/";
+    var baseImageUrl = "https://image.tmdb.org/t/p/w300/";
     return baseImageUrl + movie.poster_path; 
   }
 }
@@ -28,7 +28,7 @@ var api = {
 
 // TODO 1
 // this function should accept a second argument, `keywords`
-function discoverMovies(callback) {
+function discoverMovies(callback, keywords) {
 
   // TODO 2 
   // ask the API for movies related to the keywords that were passed in above
@@ -38,6 +38,7 @@ function discoverMovies(callback) {
     url: api.root + "/discover/movie",
     data: {
       api_key: api.token,
+      with_keywords: keywords
     },
     success: function(response) {
       model.browseItems = response.results;
