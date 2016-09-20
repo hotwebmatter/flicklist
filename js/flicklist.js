@@ -90,7 +90,8 @@ function searchMovies(query, callback) {
   //     "192305|210090|210092|210093"
   // HINT: pass an argument to the join function
       var keywordsString = keywordIDs.join("|");
-
+      console.log(keywordsString);
+      
   // TODO 4d
   // when the response comes back, call discoverMovies, 
   // passing along 2 arguments:
@@ -99,7 +100,11 @@ function searchMovies(query, callback) {
       discoverMovies(callback, keywordsString);
     }
   });
-}
+  
+  function getID(current_keyword) {
+  	return current_keyword.id;
+  }
+
 
   $.ajax({
     url: api.root + "/search/movie",
