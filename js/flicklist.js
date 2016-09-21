@@ -122,7 +122,32 @@ function render() {
 
     $("#section-watchlist ul").append(itemView);
   });
+  
+  var activeMovie = model.browseItems[ model.activeMovieIndex ];
 
+  $("#browse-info h4").text(activeMovie.original_title);
+  $("#browse-info p").text(activeMovie.overview);
+
+  $("#add-to-watchlist")
+    .attr("class", "btn btn-primary")
+    .unbind("click")
+    .click(function() {
+      model.watchlistItems.push(activeMovie);
+      render();
+    })
+    .prop("disabled", model.watchlistItems.indexOf(activeMovie) !== -1);
+
+  var posters = model.browseItems.map(function(movie) {
+    var poster = $("<img></img>")
+      .attr("src", api.posterUrl(movie))
+      .attr("class", "img-responsive");
+
+    return $("<li></li>")
+      .attr("class", "item")
+      .append(poster);
+  });
+  $("#section-browse .carousel-inner").append(posters);
+  posters[model.activeMovieIndex].addClass("active");
 
 }
 
