@@ -50,3 +50,9 @@ section {
     max-width: 300px;
     margin: auto;
 }
+
+.well {
+	background: red;
+	color: white;
+	border-width: 0px;
+}
