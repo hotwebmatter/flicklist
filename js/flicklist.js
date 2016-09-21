@@ -23,7 +23,6 @@ var api = {
 }
 
 
-
 /**
  * Makes an AJAX request to themoviedb.org, asking for some movies
  *
