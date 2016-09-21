@@ -84,6 +84,13 @@
           </header>
           <form id="form-search">
             <div class="input-group">
+              <input type="text" class="form-control" name="queryTitle"/>
+              <span class="input-group-btn">
+                <input type="submit" class="btn btn-primary" value="Search By Title"/>
+              </span>
+            </div>
+            <p>&nbsp;</p>
+            <div class="input-group">
               <input type="text" class="form-control" name="query"/>
               <span class="input-group-btn">
                 <input type="submit" class="btn btn-primary" value="Search By Topic"/>
@@ -100,12 +107,18 @@
   <script>
   /* global $ */
   /* global searchMovies */
+  /* global searchTitles */
   /* global render */
   /* global model */
     $("#form-search").submit(function(evt) {
       evt.preventDefault();
       var query = $("#form-search input[name=query]").val();
       searchMovies(query, render);
+    });
+    $("#form-search").submit(function(evt) {
+      evt.preventDefault();
+      var query = $("#form-search input[name=queryTitle]").val();
+      searchTitles(query, render);
     });
 
     $("#browse-carousel").on("slid.bs.carousel", function() {

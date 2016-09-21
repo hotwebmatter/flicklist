@@ -75,6 +75,29 @@ function searchMovies(query, callback) {
   });
 }
 
+/**
+ * Makes an AJAX request to the /search/keywords endpoint of the API, using the 
+ * query string that was passed in
+ *
+ * if successful, invokes the supplied callback function, passing in
+ * the API's response.
+ */
+function searchTitles(query, callback) {
+
+  $.ajax({
+    url: api.root + "/search/movie",
+    data: {
+      api_key: api.token,
+      query: query
+    },
+    success: function(response) {
+      console.log(response);
+      
+      model.browseItems = response.results;
+      callback(response);
+    }
+  });
+}
 
 /**
  * re-renders the page with new content, based on the current state of the model
