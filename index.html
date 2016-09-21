@@ -44,6 +44,7 @@
       -->
       
       <div class="row">
+        
         <div class="col-sm-8">
           <div class="well">
             <div class="row">
@@ -54,7 +55,6 @@
               </div>
               <div class="col-xs-5">
 
-                <img src="https://pbs.twimg.com/profile_images/378800000576832113/3e69602eab961fd19b89cc65ea9bd2e8.jpeg" id="add-to-watchlist" class="img-responsive">
                 <!-- 
                 TODO
                 implement a carousel inside this section
@@ -62,7 +62,15 @@
                 -->
                 <div id="browse-carousel" class="carousel slide" data-ride="carousel">
                   <ul class="carousel-inner" role="listbox">
-                    
+                    <li class="item active">
+                      <img src="https://pbs.twimg.com/profile_images/378800000576832113/3e69602eab961fd19b89cc65ea9bd2e8.jpeg"/>
+                    </li>
+                    <li class="item">
+                      <img src="https://pbs.twimg.com/profile_images/378800000576832113/3e69602eab961fd19b89cc65ea9bd2e8.jpeg"/>
+                    </li>
+                    <li class="item">
+                      <img src="https://pbs.twimg.com/profile_images/378800000576832113/3e69602eab961fd19b89cc65ea9bd2e8.jpeg"/>
+                    </li>
                     
                   </ul>
                   <!-- Left and right controls -->
@@ -73,11 +81,12 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
                 </div>
-                
+                  <button id="add-to-watchlist">Add to Watchlist</button>
               </div>
             </div>
           </div>
         </div>
+        
         <div class="col-sm4">
           <header>
             <h2>Browse Movies</h2>
@@ -101,6 +110,7 @@
   /* global $ */
   /* global searchMovies */
   /* global render */
+  /* global model */
     $("#form-search").submit(function(evt) {
       evt.preventDefault();
       var query = $("#form-search input[name=query]").val();
@@ -112,6 +122,8 @@
       var newIndex = $("#browse-carousel").find(".active").index();
       // TODO 
       // update the model and then re-render
+      model.activeMovieIndex = newIndex;
+      render();
     });
   </script>
 
