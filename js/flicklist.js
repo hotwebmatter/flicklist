@@ -84,7 +84,7 @@ function render() {
 
   // clear everything
   $("#section-watchlist ul").empty();
-  $("#section-browse ul").empty();
+  $("#section-browse .carousel-inner").empty();
 
   // render watchlist items
   model.watchlistItems.forEach(function(movie) {
