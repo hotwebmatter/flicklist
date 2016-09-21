@@ -2,7 +2,8 @@
 
 var model = {
   watchlistItems: [],
-  browseItems: []
+  browseItems: [],
+  activeMovieIndex: 0
 
   // TODO 
   // add a property for the current active movie index
